@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giotto Frean — Robotics &amp; Machine Learning</title>
+  <meta name="description" content="Personal webpage of Giotto Frean: decision-making for autonomous sensing systems, marine machine learning, multiagent systems." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <span class="nav-name">Giotto Frean</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO / ABOUT ============ -->
+    <section id="about" class="hero container">
+      <div class="hero-text">
+        <h1>Giotto Frean</h1>
+        <p class="tagline">Decision-making for autonomous sensing systems</p>
+        <p>
+          I'm a computer scientist with a background in machine learning. I've just
+          started a PhD at the University of Manchester in the Robotics and AI for
+          Net Zero CDT, where I'll be building an underwater robot to monitor fish
+          spawning.
+        </p>
+        <p>
+          Before this, I developed acoustic classification models for ecological
+          conservation, and worked on agent-based modelling and low-latency
+          inference. My research interests are ecological monitoring with AUVs,
+          population inference, and machine learning for conservation — alongside
+          multi-agent systems and robotics more broadly.
+        </p>
+        <ul class="link-list" aria-label="External links">
+          <li><a class="btn" href="https://github.com/GiottoFrean" target="_blank" rel="noopener">GitHub</a></li>
+          <!-- TODO: add your LinkedIn URL here -->
+          <li><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <!-- TODO: export your CV as assets/Giotto_Frean_CV.pdf (or update this href) -->
+          <li><a class="btn" href="assets/Giotto_Frean_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+          <li><a class="btn" href="mailto:gmfrean@proton.me">Email</a></li>
+        </ul>
+      </div>
+      <div class="hero-avatar">
+        <!-- TODO: replace this placeholder with your photo, e.g.
+             <img src="assets/photo.jpg" alt="Portrait of Giotto Frean" /> -->
+        <svg viewBox="0 0 200 200" role="img" aria-label="Avatar placeholder for Giotto Frean">
+          <defs>
+            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0e3a53"/>
+              <stop offset="100%" stop-color="#0a5c6b"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="98" fill="url(#sea)"/>
+          <path d="M20 150 q20 -14 40 0 t40 0 t40 0 t40 0" fill="none" stroke="#7fd1c8" stroke-width="4" opacity="0.8"/>
+          <path d="M20 165 q20 -14 40 0 t40 0 t40 0 t40 0" fill="none" stroke="#7fd1c8" stroke-width="3" opacity="0.5"/>
+          <text x="100" y="105" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#eaf6f5">GF</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <div class="skill-grid">
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <p>Python (TensorFlow, PyTorch, SciPy, NumPy, Pandas, Matplotlib, Scikit-learn), Julia, SQL, Java, C#.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Machine Learning &amp; AI</h3>
+          <p>Bayesian networks, reinforcement learning, linear models, HMMs, CNNs, transformers, Gaussian processes, kernel regression, MCMC sampling, value iteration.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Multi-agent Systems</h3>
+          <p>Distributed optimization and constraint satisfaction, non-cooperative game theory, POMDPs, Nash equilibria, repeated games.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Mathematics</h3>
+          <p>Linear algebra, graph theory, statistics, discrete mathematics, probability.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS (TABS) ============ -->
+    <section id="projects" class="container">
+      <h2>Projects &amp; Research</h2>
+      <p class="section-intro">
+        Most of my work is published as interactive notebooks on GitHub. The tabs
+        below cover my main interests — from marine machine learning and
+        conservation through to multiagent systems and decision-making.
+      </p>
+
+      <div class="tabs">
+        <div class="tab-list" role="tablist" aria-label="Project areas">
+          <button class="tab-btn active" id="tab-marine" role="tab" aria-selected="true" aria-controls="panel-marine">Marine ML &amp; Conservation</button>
+          <button class="tab-btn" id="tab-multiagent" role="tab" aria-selected="false" aria-controls="panel-multiagent" tabindex="-1">Multiagent Systems</button>
+          <button class="tab-btn" id="tab-decision" role="tab" aria-selected="false" aria-controls="panel-decision" tabindex="-1">Decision Making</button>
+          <button class="tab-btn" id="tab-other" role="tab" aria-selected="false" aria-controls="panel-other" tabindex="-1">Other Projects</button>
+        </div>
+
+        <!-- ===== TAB: MARINE ===== -->
+        <div class="tab-panel active" id="panel-marine" role="tabpanel" aria-labelledby="tab-marine">
+          <article class="project">
+            <h3>PhD direction: passive acoustic inference for underwater monitoring</h3>
+            <p>
+              Deep-sea population surveys need sensing where light, communication,
+              and access are constrained. Cameras and artificial lighting disturb
+              animals and burn energy. My hypothesis: marine animals generate
+              partially distinguishable sounds when they move, and a low-power
+              hydrophone array can capture enough of that signature to infer
+              species or coarse groups — enabling long-duration, low-disturbance,
+              energy-efficient surveys.
+            </p>
+            <p>This raises two research questions:</p>
+            <ol>
+              <li>How reliably can marine species be identified from movement acoustics alone?</li>
+              <li>How can rare-event data collection be maximized by a system under energy constraints?</li>
+            </ol>
+            <p>
+              I've explored both questions in a series of simulation-based notebooks,
+              published as
+              <a href="https://github.com/GiottoFrean/Energy-Efficient-Marine-Inference" target="_blank" rel="noopener">Energy-Efficient Marine Inference</a>.
+            </p>
+
+            <div class="figure-row">
+              <figure>
+                <img src="assets/box_creature.gif" alt="Simulated box-shaped creature moving within a hydrophone box" loading="lazy" />
+                <img src="assets/worm_creature.gif" alt="Simulated worm-like creature moving within a hydrophone box" loading="lazy" />
+                <figcaption>Simulated creatures inside a hydrophone box — a classifier can distinguish species from movement acoustics in principle.</figcaption>
+              </figure>
+            </div>
+
+            <div class="figure-row">
+              <figure>
+                <img class="wide" src="assets/gp_progress.png" alt="Gaussian Process posterior evolving during optimization" loading="lazy" />
+                <figcaption>Gaussian process optimization: sample-efficient search for high-density locations by maximizing expected improvement.</figcaption>
+              </figure>
+            </div>
+
+            <div class="figure-row">
+              <figure>
+                <img class="wide" src="assets/sensor_array.png" alt="Grid of stationary sensors and their received signals" loading="lazy" />
+                <img src="assets/score_grid.png" alt="Spatial event score grid after distributed inference" loading="lazy" />
+                <figcaption>Distributed event inference: stationary receivers run local detection and only transmit above a confidence threshold, cutting communication costs.</figcaption>
+              </figure>
+            </div>
+
+            <div class="figure-row">
+              <figure>
+                <img class="wide" src="assets/gp_budget.png" alt="GP optimization with travel distance penalized" loading="lazy" />
+                <figcaption>Adding an explicit energy budget: discounting expected improvement by travel distance yields more energy-efficient exploration.</figcaption>
+              </figure>
+            </div>
+
+            <div class="figure-row">
+              <figure>
+                <img src="assets/poisson_true.png" alt="True underlying spatial event intensity function" loading="lazy" />
+                <img src="assets/poisson_inferred.png" alt="Inferred spatial event intensity function" loading="lazy" />
+                <figcaption>Rare-event optimization: sparse encounters along a trajectory are inverted to recover the underlying spatial density of an inhomogeneous Poisson process.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>Bird species classification</h3>
+            <p>
+              At Victoria University of Wellington I'm developing a pipeline for
+              classifying bird species from their calls using Audio Spectrogram
+              Transformers, with a focus on the domain shift problem across
+              different recording environments — closely related to the acoustic
+              classification challenges of my PhD.
+            </p>
+          </article>
+        </div>
+
+        <!-- ===== TAB: MULTIAGENT ===== -->
+        <div class="tab-panel" id="panel-multiagent" role="tabpanel" aria-labelledby="tab-multiagent" hidden>
+          <article class="project">
+            <h3>Multiagent Systems notebooks</h3>
+            <p>
+              A set of notebooks implementing key algorithms while working through
+              <em>Multiagent Systems</em> by Yoav Shoham and Kevin Leyton-Brown:
+              distributed constraint satisfaction, distributed optimization,
+              non-cooperative game theory, sequential games, congestion games,
+              communication, social choice, and mechanism design.
+              <a href="https://github.com/GiottoFrean/Multiagent_Systems" target="_blank" rel="noopener">GitHub repository</a>.
+            </p>
+
+            <div class="figure-row">
+              <figure>
+                <img src="assets/domain_pruning.png" alt="Graph colouring nodes progressively pruning their colour domains" loading="lazy" />
+                <figcaption>Distributed constraint satisfaction as graph colouring: nodes prune impossible values and exchange "nogoods" until the network agrees.</figcaption>
+              </figure>
+            </div>
+
+            <div class="figure-row">
+              <figure>
+                <img class="wide" src="assets/async_backtracking.png" alt="Steps of the asynchronous backtracking algorithm passing messages" loading="lazy" />
+                <figcaption>Asynchronous backtracking: agents try values greedily and backtrack with nogood messages until a consistent solution emerges.</figcaption>
+              </figure>
+            </div>
+
+            <div class="figure-row">
+              <figure>
+                <img src="assets/normal_form_game.png" alt="A game represented in normal form" loading="lazy" />
+                <figcaption>Games in normal form, with notebooks on solution concepts including Nash equilibria and iterated dominance.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+
+        <!-- ===== TAB: DECISION MAKING ===== -->
+        <div class="tab-panel" id="panel-decision" role="tabpanel" aria-labelledby="tab-decision" hidden>
+          <article class="project">
+            <h3>Algorithms for Decision Making notebooks</h3>
+            <p>
+              Notebooks implementing key algorithms from
+              <em>Algorithms for Decision Making</em> by Kochenderfer, Wheeler, and
+              Wray: probabilistic graphical models, exact and sampling-based
+              inference, maximum likelihood and Bayesian parameter learning, EM,
+              utility theory, decision networks, value of information, MDPs, and
+              value iteration.
+              <a href="https://github.com/GiottoFrean/Decision-Making" target="_blank" rel="noopener">GitHub repository</a>.
+            </p>
+
+            <div class="figure-row">
+              <figure>
+                <img src="assets/gaussian_prior.png" alt="A joint Gaussian distribution before conditioning" loading="lazy" />
+                <img src="assets/gaussian_conditioned.png" alt="The same Gaussian after conditioning on an observation" loading="lazy" />
+                <figcaption>Inference with Gaussians: conditioning has a closed form — observing one variable sharpens the belief over the rest.</figcaption>
+              </figure>
+            </div>
+
+            <div class="figure-row">
+              <figure>
+                <img class="wide" src="assets/lqr_1.png" alt="Linear Quadratic Regulator controlling a system in continuous space" loading="lazy" />
+                <figcaption>An MDP in continuous space: the Linear Quadratic Regulator derives an optimal policy for linear dynamics with quadratic costs.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+
+        <!-- ===== TAB: OTHER ===== -->
+        <div class="tab-panel" id="panel-other" role="tabpanel" aria-labelledby="tab-other" hidden>
+          <article class="project">
+            <h3>Quitter — quadratic voting social media</h3>
+            <p>
+              A social media prototype where content is ranked by quadratic voting
+              across repeated rounds. Users allocate positive or negative votes from
+              a fixed credit budget, aligning outcomes with true preference rather
+              than raw engagement. Built with Dash and released open-source.
+              <a href="https://quitter-web.onrender.com/about" target="_blank" rel="noopener">Live app</a> ·
+              <a href="https://github.com/GiottoFrean" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </article>
+
+          <article class="project">
+            <h3>Viseme learning</h3>
+            <p>
+              A computer vision system that extracts visemes (visual speech units)
+              from video, combining phoneme recognition with neural facial
+              representation models. I made short animations with the tool.
+              <a href="https://github.com/GiottoFrean" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </article>
+
+          <article class="project">
+            <h3>Publication: agricultural policy optimization</h3>
+            <p>
+              <em>Optimising policy to achieve environmental goals for agriculture</em>
+              (SSRN, May 2024). A hectare-level multi-agent model of New Zealand
+              agricultural land use, analysing how emission pricing and
+              capability-building policies affect emissions, water quality, and
+              profitability.
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4825534" target="_blank" rel="noopener">Read on SSRN</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="container">
+      <h2>Experience</h2>
+      <ul class="timeline">
+        <li>
+          <span class="timeline-date">2026 – </span>
+          <strong>PhD, Robotics and AI for Net Zero CDT</strong>, University of Manchester —
+          building an underwater robot to monitor fish spawning.
+        </li>
+        <li>
+          <span class="timeline-date">2024 – </span>
+          <strong>Programmer</strong>, Victoria University of Wellington —
+          bird species classification from calls with Audio Spectrogram Transformers.
+        </li>
+        <li>
+          <span class="timeline-date">2021 – 2024</span>
+          <strong>Quantitative Associate</strong>, Scarlatti —
+          applied research on agricultural policy using geographical datasets and agent-based simulations.
+        </li>
+        <li>
+          <span class="timeline-date">2021</span>
+          <strong>Research Assistant</strong>, Victoria University of Wellington —
+          signal processing on noisy Chandra X-Ray Observatory image data.
+        </li>
+        <li>
+          <span class="timeline-date">2019 – 2020</span>
+          <strong>Data Analyst</strong>, Sail GP —
+          Gaussian process models predicting forces on a racing yacht for real-time motor control.
+        </li>
+      </ul>
+      <p class="education-line">
+        <strong>Education:</strong> BSc (Hons) Computer Science, First Class, and BSc
+        Computer Science &amp; Politics — Victoria University of Wellington.
+        Dean's List; Royal Society Prize, NIWA Wellington Science Fair (2013).
+      </p>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p>
+        The best way to reach me is by email at
+        <a href="mailto:gmfrean@proton.me">gmfrean@proton.me</a>. You can also find
+        my code on <a href="https://github.com/GiottoFrean" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Giotto Frean. All figures are from my own simulation notebooks.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
